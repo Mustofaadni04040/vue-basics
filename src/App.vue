@@ -1,4 +1,5 @@
 <script setup>
+import { reactive, ref } from 'vue'
 import MainButton from './components/MainButton.vue'
 
 const name = 'Ucok Udin'
@@ -8,6 +9,13 @@ const blogClass = 'text-2xl flex flex-col'
 const submitButton = {
   title: 'Submit',
 }
+const count = ref(1)
+
+const updateCount = () => {
+  count.value++
+}
+
+const user = reactive({ name: 'Adudu', age: 20 })
 </script>
 
 <template>
@@ -22,6 +30,11 @@ const submitButton = {
   <div v-bind:id="idBlog" :class="blogClass">{{ blogPost }}</div>
   <!--shorthand: :id="idBlog"-->
   <div v-html="blogPost"></div>
+  <button @click="updateCount">{{ count }}</button>
+  <div>
+    <h1>{{ user.name }}</h1>
+    <button @click="user.age++">{{ user.age }}</button>
+  </div>
 </template>
 
 <style scoped></style>
