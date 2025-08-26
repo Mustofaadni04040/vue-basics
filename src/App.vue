@@ -1,6 +1,7 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import MainButton from './components/MainButton.vue'
+import ComputedProperties from './components/ComputedProperties.vue'
 
 const name = 'Ucok Udin'
 const blogPost = "<p style='color: red'>Ini adalah blog post</p>"
@@ -35,6 +36,8 @@ const user = reactive({ name: 'Adudu', age: 20 })
     <h1>{{ user.name }}</h1>
     <button @click="user.age++">{{ user.age }}</button>
   </div>
+
+  <ComputedProperties />
 </template>
 
 <style scoped></style>
