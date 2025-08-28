@@ -32,7 +32,19 @@ const { title, numberButton } = defineProps({
       {{ renderIsLoading() }}
     </button>
   </a> -->
-  <button>{{ title }} {{ numberButton }}</button>
+  <button class="button">{{ title }} {{ numberButton }}</button>
 </template>
 
-<style scoped></style>
+<style scoped>
+.button {
+  background-color: salmon;
+  border: none;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+.disabled {
+  background-color: black;
+}
+</style>

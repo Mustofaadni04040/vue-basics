@@ -4,6 +4,7 @@ import MainButton from './components/MainButton.vue'
 import ComputedProperties from './components/ComputedProperties.vue'
 import ConditionalRendering from './components/ConditionalRendering.vue'
 import ListRendering from './components/ListRendering.vue'
+import ClassAndStyle from './components/ClassAndStyle.vue'
 
 const name = 'Ucok Udin'
 const blogPost = "<p style='color: red'>Ini adalah blog post</p>"
@@ -19,6 +20,11 @@ const updateCount = () => {
 }
 
 const user = reactive({ name: 'Adudu', age: 20 })
+const disabled = ref(false)
+const makeDisabled = () => {
+  disabled.value = !disabled.value
+}
+const disabledColor = '#ff0000'
 </script>
 
 <template>
@@ -43,6 +49,16 @@ const user = reactive({ name: 'Adudu', age: 20 })
 
   <ConditionalRendering />
   <ListRendering />
+  <ClassAndStyle />
+
+  <MainButton
+    @click="makeDisabled"
+    :disabled="disabled"
+    :class="{ disabled }"
+    class="ucok"
+    :title="`Test Button Disabled`"
+    :style="{ color: disabled ? disabledColor : '' }"
+  />
 </template>
 
 <style scoped></style>
