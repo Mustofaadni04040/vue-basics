@@ -3,6 +3,7 @@ import { reactive, ref } from 'vue'
 import MainButton from './components/MainButton.vue'
 import ComputedProperties from './components/ComputedProperties.vue'
 import ConditionalRendering from './components/ConditionalRendering.vue'
+import ListRendering from './components/ListRendering.vue'
 
 const name = 'Ucok Udin'
 const blogPost = "<p style='color: red'>Ini adalah blog post</p>"
@@ -41,6 +42,7 @@ const user = reactive({ name: 'Adudu', age: 20 })
   <ComputedProperties />
 
   <ConditionalRendering />
+  <ListRendering />
 </template>
 
 <style scoped></style>
