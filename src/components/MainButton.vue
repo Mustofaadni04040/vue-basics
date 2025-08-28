@@ -32,7 +32,7 @@ const { title, numberButton } = defineProps({
       {{ renderIsLoading() }}
     </button>
   </a> -->
-  <button class="button">{{ title }} {{ numberButton }}</button>
+  <button class="button"><slot name="h1" v-if="$slots.h1" /><slot>Default</slot></button>
 </template>
 
 <style scoped>

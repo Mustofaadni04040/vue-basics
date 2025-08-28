@@ -7,6 +7,7 @@ import ListRendering from './components/ListRendering.vue'
 import ClassAndStyle from './components/ClassAndStyle.vue'
 import EventHandling from './components/EventHandling.vue'
 import FormInput from './components/FormInput.vue'
+import Slots from './components/Slots.vue'
 
 const name = 'Ucok Udin'
 const blogPost = "<p style='color: red'>Ini adalah blog post</p>"
@@ -64,6 +65,7 @@ const disabledColor = '#ff0000'
 
   <EventHandling />
   <FormInput />
+  <Slots />
 </template>
 
 <style scoped></style>
