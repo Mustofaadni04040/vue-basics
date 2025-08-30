@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, ref } from 'vue'
+import { provide, reactive, ref } from 'vue'
 import MainButton from './components/MainButton.vue'
 import ComputedProperties from './components/ComputedProperties.vue'
 import ConditionalRendering from './components/ConditionalRendering.vue'
@@ -8,6 +8,7 @@ import ClassAndStyle from './components/ClassAndStyle.vue'
 import EventHandling from './components/EventHandling.vue'
 import FormInput from './components/FormInput.vue'
 import Slots from './components/Slots.vue'
+import ProvideAndInject from './components/ProvideAndInject.vue'
 
 const name = 'Ucok Udin'
 const blogPost = "<p style='color: red'>Ini adalah blog post</p>"
@@ -28,6 +29,15 @@ const makeDisabled = () => {
   disabled.value = !disabled.value
 }
 const disabledColor = '#ff0000'
+
+const provideName = ref('Ucok Udin')
+const updateName = () => {
+  provideName.value = 'Adudu'
+}
+provide('provideName', {
+  provideName,
+  updateName,
+})
 </script>
 
 <template>
@@ -66,6 +76,7 @@ const disabledColor = '#ff0000'
   <EventHandling />
   <FormInput />
   <Slots />
+  <ProvideAndInject />
 </template>
 
 <style scoped></style>
